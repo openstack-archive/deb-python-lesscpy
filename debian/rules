@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+UPSTREAM_GIT = git://github.com/robotis/Lesscpy.git
+include /usr/share/openstack-pkg-tools/pkgos.make
+
+PYTHONS:=$(shell pyversions -vr)
+PYTHON3S:=$(shell py3versions -vr)
+
+%:
+	dh $@ --buildsystem=python_distutils --with python3
+
+override_dh_clean:
+	dh_clean -O--buildsystem=python_distutils
+	rm -rf build
+
+override_dh_auto_install:
+	set -e && for pyvers in $(PYTHON3S); do \
+		python$$pyvers setup.py install --install-layout=deb \
+			--root $(CURDIR)/debian/python3-lesscpy; \
+	done

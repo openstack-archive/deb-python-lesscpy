@@ -1,0 +1,5 @@
+python-lesscpy (0.9h-1) experimental; urgency=low
+
+  * Initial release. (Closes: #717382)
+
+ -- Thomas Goirand <zigo@debian.org>  Sat, 20 Jul 2013 00:45:19 +0800
