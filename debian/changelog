@@ -1,3 +1,10 @@
+python-lesscpy (0.9j-1) unstable; urgency=low
+
+  * New upstream release.
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Sat, 07 Sep 2013 16:48:49 +0800
+
 python-lesscpy (0.9h-1) experimental; urgency=low
 
   * Initial release. (Closes: #717382)
