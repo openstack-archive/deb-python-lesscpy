@@ -1,0 +1,12 @@
+Description: Removes non-ascii chars from LICENSE file which are making FTBFS
+Author: Thomas Goirand <zigo@debian.org>
+Forwarded: no
+
+--- python-lesscpy-0.9j.orig/LICENSE
++++ python-lesscpy-0.9j/LICENSE
+@@ -1,4 +1,4 @@
+-Copyright (c) 2012 Jóhann T Maríusson
++Copyright (c) 2012 Johann T Mariusson
+ 
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this software and associated documentation files (the
