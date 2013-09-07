@@ -6,7 +6,7 @@ from distutils.core import setup
 
 setup(
       name='lesscpy',
-      version='0.9h',
+      version='0.9j',
       description='Lesscss compiler.',
       author='Jóhann T Maríusson',
       author_email='jtm@robot.is',
@@ -25,5 +25,5 @@ setup(
                                 'lesscpy/test/less/*.less',
                                 'lesscpy/test/less/issues/*.less',]},
       license=open('LICENSE').read(),
-      long_description=open('README').read(),
+      long_description=open('README.rst').read(),
 )
