@@ -22,6 +22,7 @@ Package: python-lesscpy
 Architecture: all
 Pre-Depends: dpkg (>= 1.15.6~)
 Depends: python-ply, ${misc:Depends}, ${python:Depends}
+Replaces: python3-lesscpy (<< 0.9j)
 Recommends: ${python:Recommends}
 Description: LessCss Compiler for Python 2.x
  Lesscpy is a compiler written in Python for the lesscss language. It is very
