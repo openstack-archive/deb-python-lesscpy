@@ -7,6 +7,9 @@ Uploaders: Julien Danjou <acid@debian.org>,
            Mehdi Abaakouk <sileht@sileht.net>
 Build-Depends: debhelper (>= 9),
                openstack-pkg-tools,
+               python-all (>= 2.6.6-3~),
+               python-ply,
+               python-setuptools,
                python3-all,
                python3-ply,
                python3-setuptools
@@ -15,16 +18,34 @@ Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-lesscpy.git
 Vcs-Git: git://anonscm.debian.org/openstack/python-lesscpy.git
 Homepage: https://pypi.python.org/pypi/lesscpy
 
-Package: python3-lesscpy
+Package: python-lesscpy
 Architecture: all
 Pre-Depends: dpkg (>= 1.15.6~)
-Depends: python3-ply, ${misc:Depends}, ${python3:Depends}
-Recommends: ${python3:Recommends}
-Description: LessCss Compiler for Python 3
- Lesscpy is a compiler written in Python 3 for the lesscss language. It is very
+Depends: python-ply, ${misc:Depends}, ${python:Depends}
+Recommends: ${python:Recommends}
+Description: LessCss Compiler for Python 2.x
+ Lesscpy is a compiler written in Python for the lesscss language. It is very
  useful if node.js can't be installed in the environment. Not all features of
  lesscss are supported (yet). Some features wil probably never be supported
  (JavaScript evaluation).
  .
  This program uses PLY (Python Lex-Yacc) to tokenize/parse the input and is
  considerably slower than the nodejs compiler.
+ .
+ This package provides the Python 2.x module.
+
+Package: python3-lesscpy
+Architecture: all
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: python3-ply, ${misc:Depends}, ${python3:Depends}
+Recommends: ${python3:Recommends}
+Description: LessCss Compiler for Python 3.x
+ Lesscpy is a compiler written in Python for the lesscss language. It is very
+ useful if node.js can't be installed in the environment. Not all features of
+ lesscss are supported (yet). Some features wil probably never be supported
+ (JavaScript evaluation).
+ .
+ This program uses PLY (Python Lex-Yacc) to tokenize/parse the input and is
+ considerably slower than the nodejs compiler.
+ .
+ This package provides the Python 3.x module.

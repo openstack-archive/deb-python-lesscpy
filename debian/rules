@@ -7,14 +7,19 @@ PYTHONS:=$(shell pyversions -vr)
 PYTHON3S:=$(shell py3versions -vr)
 
 %:
-	dh $@ --buildsystem=python_distutils --with python3
+	dh $@ --buildsystem=python_distutils --with python2,python3
 
 override_dh_clean:
 	dh_clean -O--buildsystem=python_distutils
 	rm -rf build
 
 override_dh_auto_install:
+	set -e && for pyvers in $(PYTHONS); do \
+		python$$pyvers setup.py install --install-layout=deb \
+			--root $(CURDIR)/debian/python-lesscpy; \
+	done
 	set -e && for pyvers in $(PYTHON3S); do \
 		python$$pyvers setup.py install --install-layout=deb \
 			--root $(CURDIR)/debian/python3-lesscpy; \
 	done
+	mv $(CURDIR)/debian/python3-lesscpy/usr/bin/lesscpy $(CURDIR)/debian/python3-lesscpy/usr/bin/python3-lesscpy
