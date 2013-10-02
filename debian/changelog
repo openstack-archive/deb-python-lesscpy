@@ -1,4 +1,4 @@
-python-lesscpy (0.9j-3) UNRELEASED; urgency=low
+python-lesscpy (0.9j-3) unstable; urgency=low
 
   * d/patches/fixup-python3-argparse.patch: Fix use of argparse for
     compatibility with python3.3.
