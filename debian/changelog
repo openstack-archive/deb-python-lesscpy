@@ -1,3 +1,10 @@
+python-lesscpy (0.9j-3) UNRELEASED; urgency=low
+
+  * d/patches/fixup-python3-argparse.patch: Fix use of argparse for
+    compatibility with python3.3.
+
+ -- James Page <james.page@ubuntu.com>  Wed, 02 Oct 2013 14:12:42 +0100
+
 python-lesscpy (0.9j-2) unstable; urgency=low
 
   * Renamed the MIT license to Expat, after kind explanation from the FTP
