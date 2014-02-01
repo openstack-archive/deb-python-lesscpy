@@ -23,3 +23,4 @@ override_dh_auto_install:
 			--root $(CURDIR)/debian/python3-lesscpy; \
 	done
 	mv $(CURDIR)/debian/python3-lesscpy/usr/bin/lesscpy $(CURDIR)/debian/python3-lesscpy/usr/bin/python3-lesscpy
+	mv $(CURDIR)/debian/python-lesscpy/usr/bin/lesscpy $(CURDIR)/debian/python-lesscpy/usr/bin/python2-lesscpy
