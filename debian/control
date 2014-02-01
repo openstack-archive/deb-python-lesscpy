@@ -13,7 +13,7 @@ Build-Depends: debhelper (>= 9),
                python3-all,
                python3-ply,
                python3-setuptools
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-lesscpy.git
 Vcs-Git: git://anonscm.debian.org/openstack/python-lesscpy.git
 Homepage: https://pypi.python.org/pypi/lesscpy
