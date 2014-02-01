@@ -22,5 +22,13 @@ override_dh_auto_install:
 		python$$pyvers setup.py install --install-layout=deb \
 			--root $(CURDIR)/debian/python3-lesscpy; \
 	done
-	mv $(CURDIR)/debian/python3-lesscpy/usr/bin/lesscpy $(CURDIR)/debian/python3-lesscpy/usr/bin/python3-lesscpy
 	mv $(CURDIR)/debian/python-lesscpy/usr/bin/lesscpy $(CURDIR)/debian/python-lesscpy/usr/bin/python2-lesscpy
+
+	# Fix the interpreter to be /usr/bin/env python, rather than
+	# python2.6, which needs argparse (this is only useful for
+	# backporting to wheezy, we don't care for Python 2.7)
+	sed -i '1 s/python2.6/env python/' $(CURDIR)/debian/python-lesscpy/usr/bin/python2-lesscpy
+
+	mv $(CURDIR)/debian/python3-lesscpy/usr/bin/lesscpy $(CURDIR)/debian/python3-lesscpy/usr/bin/python3-lesscpy
+	# Use /usr/bin/env python3 instead of /usr/bin/python3.x
+	sed -i '1 s/python3\../env python/' $(CURDIR)/debian/python3-lesscpy/usr/bin/python3-lesscpy

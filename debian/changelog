@@ -3,6 +3,7 @@ python-lesscpy (0.9j-4) unstable; urgency=medium
   * Installing /usr/bin/lesscpy using update-alternatives, so that users can
     use either python 2 or 3.
   * Standard-Version: is now 3.9.5.
+  * Replacing the shebang from /usr/bin/pythonx.x to /usr/bin/env python{2,3}.
 
  -- Thomas Goirand <zigo@debian.org>  Sat, 01 Feb 2014 12:31:15 +0800
 
