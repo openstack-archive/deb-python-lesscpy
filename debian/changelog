@@ -3,6 +3,7 @@ python-lesscpy (0.10-1) unstable; urgency=medium
   * New upstream release.
   * Updated upstream VCS in debian/copyright and debian/rules.
   * Removed fixup-python3-argparse.patch.
+  * Made openstack-pkg-tools optional, and include non-mandatory.
 
  -- Thomas Goirand <zigo@debian.org>  Mon, 10 Feb 2014 14:22:30 +0800
 
