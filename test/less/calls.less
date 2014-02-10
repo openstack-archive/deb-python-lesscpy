@@ -1,0 +1,42 @@
+/*
+	Built in functions
+*/
+@r: 32;
+#standard {
+  	@var: 10;
+  	width: increment(15);
+  	height: undefined("self");
+  	border-width: add(2, 3);
+  	variable: increment(@var);
+  	decrement: decrement(@var);
+  	rounded: round(@r/3);
+  	roundedpx: round(10px / 3);
+        round25: round(2.5);
+        round15: round(1.5);
+}
+#escapes {
+  	escaped: e("-Some(#thing, y)");
+  	escaped1: ~"-Some(#thing, z)";
+  	eformat: e(%("rgb(%d, %d, %d)", @r, 128, 64));
+}
+#format {
+	format: %("rgb(%d, %d, %d)", @r, 128, 64);
+  	format-string: %("hello %s", "world");
+  	format-multiple: %("hello %s %d", "earth", 2);
+  	format-url-encode: %('red is %A', #ff0000);
+}
+#more {
+	width: ceil(5/3.0px);
+	height: floor(5.0/3px);
+	top: percentage(0.5);
+}
+#colors {
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",#fff,#333));
+}
+#gradient(@startColor, @endColor) {
+	background-image: linear-gradient(top, @startColor, @endColor);
+}
+a {
+	#gradient(#fff, #333);
+	#gradient(#a6a6a6, #000);
+}

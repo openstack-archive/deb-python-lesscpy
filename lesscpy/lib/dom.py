@@ -5,6 +5,7 @@
     See LICENSE for details.
     <jtm@robot.is>
 """
+
 html4 = [
     'a',
     'abbr',
@@ -87,6 +88,7 @@ html4 = [
     'table',
     'tbody',
     'td',
+    'template',
     'textarea',
     'tfoot',
     'th',
@@ -97,15 +99,8 @@ html4 = [
     'u',
     'ul',
     'var',
-
-    'print',
-    'screen',
-    'all',
-    'only',
-    'projection',
-    'from',
-    'to'
 ]
+
 html5 = [
     'article',
     'aside',
@@ -122,6 +117,7 @@ html5 = [
     'header',
     'hgroup',
     'keygen',
+    'main',
     'mark',
     'meter',
     'nav',
@@ -139,7 +135,10 @@ html5 = [
     'track',
     'video',
     'wbr',
+
+    'only',  # TODO/FIXME: What is this?!?
 ]
+
 svg = [
     'altGlyph',
     'altGlyphDef',
@@ -158,6 +157,16 @@ svg = [
     'tref',
     'tspan',
 ]
-html = html4
-html.extend(html5)
-html.extend(svg)
+
+# Check http://www.w3.org/TR/css3-animations/#keyframes
+# Treating them as DOM elements isn't entirely accurate
+# but sufficent for our purposes.
+css3_animation_keyframe_selectors = [
+    'from',
+    'to'
+]
+
+elements = html4
+elements.extend(html5)
+elements.extend(svg)
+elements.extend(css3_animation_keyframe_selectors)

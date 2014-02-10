@@ -84,8 +84,9 @@ def run():
     """Run compiler
     """
     aparse = argparse.ArgumentParser(description='LessCss Compiler',
-                                     epilog='<< jtm@robot.is @_o >>',
-                                     version=VERSION_STR)
+                                     epilog='<< jtm@robot.is @_o >>')
+    aparse.add_argument('-v', '--version', action='version',
+                        version=VERSION_STR)
     aparse.add_argument('-I', '--include', action="store", type=str,
                         help="Included less-files (comma separated)")
     aparse.add_argument('-V', '--verbose', action="store_true",
@@ -132,7 +133,10 @@ def run():
                 tok = ll.token()
                 if not tok:
                     break
-                print(tok)
+                if hasattr(tok, "lexer"):  # literals don't have the lexer attribute
+                    print(tok, "State:", tok.lexer.lexstate)
+                else:
+                    print(tok)
             print('EOF')
             sys.exit()
         #
@@ -148,7 +152,7 @@ def run():
                                           yacc_optimize=(not args.debug),
                                           tabfile=yacctab,
                                           verbose=args.verbose)
-                    p.parse(filename=u, debuglevel=0)
+                    p.parse(filename=u, debuglevel=args.debug)
                     if not scope:
                         scope = p.scope
                     else:
@@ -170,7 +174,7 @@ def run():
                                   yacc_optimize=(not args.debug),
                                   scope=copy.deepcopy(scope),
                                   verbose=args.verbose)
-            p.parse(filename=args.target, debuglevel=0)
+            p.parse(filename=args.target, debuglevel=args.debug)
             if args.scopemap:
                 args.no_css = True
                 p.scopemap()

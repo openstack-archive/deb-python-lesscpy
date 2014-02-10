@@ -9,7 +9,6 @@
 """
 import re
 from .node import Node
-from lesscpy.lessc import utility
 
 
 class Property(Node):
@@ -79,7 +78,7 @@ class Property(Node):
                          else str(p)
                          for p in self.parsed])
         # IE cannot handle no space after url()
-        style = re.sub("(url\(.*\))([^\s,])", "\\1 \\2", style)
+        style = re.sub("(url\([^\)]*\))([^\s,])", "\\1 \\2", style)
         fills.update({
             'property': self.property,
             'style': style.strip(),
@@ -93,6 +92,3 @@ class Property(Node):
             Property object
         """
         return Property([t for t in self.tokens], 0)
-        new.property = self.property
-        new.parsed = [u for u in self.parsed]
-        return new

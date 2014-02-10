@@ -1,0 +1,26 @@
+/*
+	CSS imports
+*/
+@import 'some.css.file.css';
+@import 'some/other.css.file.CSS';
+/*
+	CSS imports (media)
+*/
+@import 'some.css' all;
+@import "some.print.css" print;
+/*
+	Less imports
+*/
+@import './imports/import.less';
+@import './imports/import.less'; // redundant
+@import './imports/import_f'; // No ext
+.import {
+	.mixin;
+	.mixf(6px);
+	height: @imported;
+}
+@import "styles.css";
+@import url("styles.css");
+@import url("druck.css") print;
+@import url("foo.css") projection, tv;
+@import url("bar.css") handheld and (max-width: 500px);
