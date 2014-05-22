@@ -31,4 +31,4 @@ override_dh_auto_install:
 
 	mv $(CURDIR)/debian/python3-lesscpy/usr/bin/lesscpy $(CURDIR)/debian/python3-lesscpy/usr/bin/python3-lesscpy
 	# Use /usr/bin/env python3 instead of /usr/bin/python3.x
-	sed -i '1 s/python3\../env python/' $(CURDIR)/debian/python3-lesscpy/usr/bin/python3-lesscpy
+	sed -i '1 s/python.*\../env python3/' $(CURDIR)/debian/python3-lesscpy/usr/bin/python3-lesscpy
