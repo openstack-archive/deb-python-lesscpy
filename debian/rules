@@ -34,7 +34,7 @@ override_dh_auto_install:
 	sed -i '1 s/python.*\../env python3/' $(CURDIR)/debian/python3-lesscpy/usr/bin/python3-lesscpy
 
 override_dh_python2:
-	dh_python2 --no-shebang-rewrite
+	dh_python2 -O--buildsystem=python_distutils --no-shebang-rewrite
 
 override_dh_python3:
-	dh_python3 --no-shebang-rewrite
+	dh_python3 -O--buildsystem=python_distutils --no-shebang-rewrite
