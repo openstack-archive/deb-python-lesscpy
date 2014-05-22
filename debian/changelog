@@ -1,16 +1,11 @@
-python-lesscpy (0.10-2) unstable; urgency=medium
-
-  * Fix shellbang for the python3 package (Closes: #747876).
-
- -- Thomas Goirand <zigo@debian.org>  Thu, 22 May 2014 18:14:47 +0800
-
 python-lesscpy (0.10-1) unstable; urgency=medium
 
   * New upstream release.
   * Updated upstream VCS in debian/copyright and debian/rules.
   * Removed fixup-python3-argparse.patch.
+  * Fix shellbang for the python3 package (Closes: #747876).
 
- -- Thomas Goirand <zigo@debian.org>  Mon, 10 Feb 2014 14:22:30 +0800
+ -- Thomas Goirand <zigo@debian.org>  Thu, 22 May 2014 18:14:47 +0800
 
 python-lesscpy (0.9j-4) unstable; urgency=medium
 
